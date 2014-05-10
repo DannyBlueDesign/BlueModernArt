@@ -53,5 +53,6 @@ Art.prototype.createArt = function() {
 };
 
 Art.prototype.clearArt = function() {
+  this.stage.clearCache();
   this.stage.clear();
 }
