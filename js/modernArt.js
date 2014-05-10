@@ -13,8 +13,8 @@ Art.prototype.createArt = function() {
   var layer1 = new Kinetic.Layer();
       layer2 = new Kinetic.Layer();
 
-  for(var i = 0; i <= 3000; i += Math.floor((Math.random() * 100) + 1)) {
-    for(var y = 0; y <= 3000; y += Math.floor((Math.random() * 100) + 1)) {
+  for(var i = 0; i <= 3000; i += Math.floor((Math.random() * 125) + 1)) {
+    for(var y = 0; y <= 3000; y += Math.floor((Math.random() * 125) + 1)) {
       var w = Math.round(Math.random() * 10), object;
 
       if(w === 0) {
