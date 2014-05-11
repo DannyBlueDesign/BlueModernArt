@@ -46,8 +46,6 @@ function colorPicker(id, canvas) {
 		onHide: function (colpkr) {
 			$(colpkr).fadeOut(500);
 
-			canvas.changeColors();
-
 			stage.toDataURL({
 	          callback: function(dataUrl) {
 	            $("#download")
@@ -71,11 +69,11 @@ function makeKey() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < 5; i++ ) {
+    for( var i=0; i < 8; i++ ) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
 
-    return text;
+    return "modern_art_" + text;
 }
 
 /* Loop over all color picker elements
@@ -101,6 +99,8 @@ document.getElementById("download").addEventListener("click", function() {
 	$("#download").attr("download", makeKey());
 });
 
-// document.getElementById("dance").addEventListener("click", function() {
-// 	setInterval(function() { art.shuffleArt(); }, 400);
-// });
+document.getElementById("updateColor").addEventListener("click", function() {
+	art.changeColors();
+
+	$("#download").attr("download", makeKey());
+});

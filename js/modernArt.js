@@ -15,15 +15,15 @@ Art.prototype.createArt = function() {
   var shapeList = [];
 
   /* Loop that draws shapes to the canvas*/
-  for(var i = 0; i <= 2500; i += Math.floor((Math.random() * 220) + 1)) {
-    for(var y = 0; y <= 1000; y += Math.floor((Math.random() * 220) + 1)) {
+  for(var i = 0; i <= 2700; i += Math.floor((Math.random() * 130) + 1)) {
+    for(var y = 0; y <= 800; y += Math.floor((Math.random() * 130) + 1)) {
       var w = Math.round(Math.random() * 10), object;
       
       object = new Kinetic.Rect({
         x: i,
         y: y,
-        width: Math.floor((Math.random() * 125) + 1),
-        height: Math.floor((Math.random() * 125) + 1),
+        width: Math.floor((Math.random() * 75) + 1),
+        height: Math.floor((Math.random() * 75) + 1),
         fill: this.colors[Math.floor(Math.random() * this.colors.length)],
         opacity: Math.random()
       });
@@ -51,16 +51,16 @@ Art.prototype.createArt = function() {
 Art.prototype.shuffleArt = function() {
   var shapeCount = 0;
 
-  for(var i = 0; i <= 2200; i += Math.floor((Math.random() * 220) + 1)) {
-    for(var y = 0; y <= 1000; y += Math.floor((Math.random() * 220) + 1)) {
+  for(var i = 0; i <= 2700; i += Math.floor((Math.random() * 130) + 1)) {
+    for(var y = 0; y <= 800; y += Math.floor((Math.random() * 130) + 1)) {
       var w = Math.round(Math.random() * 10);
       
       var tween = new Kinetic.Tween({
         node: this.shapeList[shapeCount],
         x: i,
         y: y,
-        width: Math.floor((Math.random() * 125) + 1),
-        height: Math.floor((Math.random() * 125) + 1),
+        width: Math.floor((Math.random() * 75) + 1),
+        height: Math.floor((Math.random() * 75) + 1),
         opacity: Math.random(),
         easing: Kinetic.Easings.StrongEaseOut,
         duration: 2
