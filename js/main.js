@@ -50,7 +50,9 @@ function colorPicker(id, canvas) {
 
 			stage.toDataURL({
 	          callback: function(dataUrl) {
-	            $("#download").attr("href", dataUrl);
+	            $("#download")
+	            	.attr("href", dataUrl)
+	            	.attr("download", makeKey());
 	          }
 	        });
 		},
@@ -60,6 +62,20 @@ function colorPicker(id, canvas) {
 			defaultColors[id] = "#" + hex;
 		}
 	});
+}
+
+/*
+** Generate Random Key
+*/
+function makeKey() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ ) {
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
 }
 
 /* Loop over all color picker elements
@@ -72,7 +88,19 @@ for(var i = 0; i<colorSelectors; i++) {
 }
 
 document.getElementById("shuffle").addEventListener("click", function() {
-	return art.shuffleArt();
+	art.shuffleArt();
+
+	return $("#download").attr("download", makeKey());
 });
 
-//setInterval(function(){ art.shuffleArt(); },200);
+$(document).ready(function() {
+	$("#download").attr("download", makeKey());
+});
+
+document.getElementById("download").addEventListener("click", function() {
+	$("#download").attr("download", makeKey());
+});
+
+// document.getElementById("dance").addEventListener("click", function() {
+// 	setInterval(function() { art.shuffleArt(); }, 400);
+// });
