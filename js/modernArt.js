@@ -71,8 +71,6 @@ Art.prototype.shuffleArt = function() {
       shapeCount++;
     }
   }
-
-  $("#download").attr("download", makeKey());
 }
 
 /*
@@ -85,6 +83,8 @@ Art.prototype.changeColors = function() {
 
   for(var i = 0; i<shapeList.length; i++) {
     shapeList[i].fill(colors[Math.floor(Math.random() * colors.length)]);
+
+    console.log(shapeList[i]);
   }
 
   layer.draw();

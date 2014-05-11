@@ -48,11 +48,11 @@ function colorPicker(id, canvas) {
 
 			stage.toDataURL({
 	          callback: function(dataUrl) {
-	            $("#download")
-	            	.attr("href", dataUrl)
-	            	.attr("download", makeKey());
+	            $("#download").attr("href", dataUrl);
 	          }
 	        });
+
+	        art.changeColors();
 		},
 		onChange: function (hsb, hex, rgb) {
 			$("#colorSelector" + id).find("div").css('backgroundColor', '#' + hex);
@@ -86,21 +86,10 @@ for(var i = 0; i<colorSelectors; i++) {
 }
 
 document.getElementById("shuffle").addEventListener("click", function() {
-	art.shuffleArt();
-
-	return $("#download").attr("download", makeKey());
+	return art.shuffleArt();
 });
 
-$(document).ready(function() {
-	$("#download").attr("download", makeKey());
-});
 
 document.getElementById("download").addEventListener("click", function() {
-	$("#download").attr("download", makeKey());
-});
-
-document.getElementById("updateColor").addEventListener("click", function() {
-	art.changeColors();
-
-	$("#download").attr("download", makeKey());
+	$(this).attr("download", makeKey());
 });
