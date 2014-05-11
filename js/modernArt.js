@@ -49,14 +49,15 @@ Art.prototype.createArt = function() {
 ** Shuffle all of the shapes to a new position on screen
 */
 Art.prototype.shuffleArt = function() {
-  var shapeCount = 0;
+  var shapeCount = 0,
+      shapeList = this.shapeList;
 
   for(var i = 0; i <= 2700; i += Math.floor((Math.random() * 140) + 1)) {
     for(var y = 0; y <= 900; y += Math.floor((Math.random() * 140) + 1)) {
       var w = Math.round(Math.random() * 10);
       
       var tween = new Kinetic.Tween({
-        node: this.shapeList[shapeCount],
+        node: shapeList[shapeCount],
         x: i,
         y: y,
         width: Math.floor((Math.random() * 75) + 1),
