@@ -79,9 +79,13 @@ Art.prototype.shuffleArt = function() {
 ** Change the color mix of the shapes
 */
 Art.prototype.changeColors = function() {
-  for(var i = 0; i<this.shapeList.length; i++) {
-    this.shapeList[i].fill(this.colors[Math.floor(Math.random() * this.colors.length)]);
+  var shapeList = this.shapeList,
+      layer = this.layer1,
+      colors = this.colors;
 
-    this.layer1.draw();
+  for(var i = 0; i<shapeList.length; i++) {
+    shapeList[i].fill(colors[Math.floor(Math.random() * colors.length)]);
   }
+
+  layer.draw();
 }
