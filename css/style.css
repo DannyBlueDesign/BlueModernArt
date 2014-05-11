@@ -70,3 +70,7 @@ h3 {
 .btn:focus {
 	outline: none !important;
 }
+
+.modal-footer .btn {
+	width: 100%;
+}

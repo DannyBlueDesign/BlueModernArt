@@ -75,11 +75,40 @@
 
     <div id="container"></div>
 
+    <!-- Welcome Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Welcome to Blue Modern Art</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>This is a work in progress art project so please keep in mind there may be bugs.</p>
+
+            <p>With that in mind please click around and enjoy making some "Art".</p>
+
+            <p>(Current the save art button does not properly capture the changes you may make.)</p>
+
+            <p>You can view the project on <a href="https://github.com/DannyBlueDesign/BlueModernArt" taget="_blank">github</a>.</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">Huzzah!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="libs/jquery-1.11.1.min.js"></script>
     <script src="libs/bootstrap.min.js"></script>
     <script src="libs/colorpicker.js"></script>
     <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.2.min.js"></script>
     <script src="js/modernArt.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      $('#welcomeModal').modal('show');
+    </script>
   </body>
 </html>
