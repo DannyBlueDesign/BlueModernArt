@@ -1,7 +1,9 @@
+var app = app || {};
+
 /*
 ** Main Art class.
 */
-function Art(opts) {
+app.Art = function(opts) {
   this.stage = opts.stage;
   this.colors = opts.colors;
   this.shapeList = [];
@@ -11,7 +13,7 @@ function Art(opts) {
 /*
 ** Initial method to create the modern art
 */
-Art.prototype.createArt = function() {
+app.Art.prototype.createArt = function() {
   var shapeList = [];
 
   /* Loop that draws shapes to the canvas*/
@@ -48,7 +50,7 @@ Art.prototype.createArt = function() {
 /*
 ** Shuffle all of the shapes to a new position on screen
 */
-Art.prototype.shuffleArt = function() {
+app.Art.prototype.shuffleArt = function() {
   var shapeCount = 0,
       shapeList = this.shapeList;
 
@@ -77,7 +79,7 @@ Art.prototype.shuffleArt = function() {
 /*
 ** Change the color mix of the shapes
 */
-Art.prototype.changeColors = function() {
+app.Art.prototype.changeColors = function() {
   var shapeList = this.shapeList,
       layer = this.layer1,
       colors = this.colors;
