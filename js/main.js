@@ -29,7 +29,7 @@ var artOptions = {
 };
 
 /* Create new art object */
-var art = new app.Art(artOptions);
+var art = new artApp.Art(artOptions);
 art.createArt();
 
 /*
