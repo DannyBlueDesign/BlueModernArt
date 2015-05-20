@@ -1,4 +1,5 @@
 'use strict';
+
 (function() {
 
   var height   = window.screen.availHeight,
@@ -8,7 +9,7 @@
 
   /* Create New Kinetic Stage */
   var stage = new Kinetic.Stage({
-    container: 'container',
+    container: canvasId,
     width: width,
     height: height
   });
