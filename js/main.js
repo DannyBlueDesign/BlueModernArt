@@ -26,7 +26,7 @@
 
     art.shuffle();
 
-  }, 4000);
+  }, 3000);
 
   canvas.addEventListener('click', function() {
     art.shuffle();
