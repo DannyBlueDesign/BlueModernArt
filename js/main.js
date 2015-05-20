@@ -20,11 +20,13 @@
 
   art.create();
 
-  //window.setInterval(function() {
-  //
-  //  art.shuffle();
-  //
-  //}, 3000);
+  art.shuffle();
+
+  window.setInterval(function() {
+
+    art.shuffle();
+
+  }, 4000);
 
   canvas.addEventListener('click', function() {
     art.shuffle();

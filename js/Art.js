@@ -1,6 +1,6 @@
 var Art = (function() {
 
-  var POSITION_BASE = 140,
+  var POSITION_BASE = 135,
       SIZE_BASE     = 75,
       prototype     = Art.prototype;
 
@@ -58,6 +58,8 @@ var Art = (function() {
     this.stage.add(this.layer1); // add the layer to the stage
 
     this.shapeList = shapeList;
+
+    console.log(this.shapeList.length);
   };
 
   /**
@@ -119,7 +121,7 @@ var Art = (function() {
    * @private
    */
   function _createRandom(base) {
-    return Math.floor((Math.random() * base) + 1)
+    return Math.floor((Math.random() * base) + 1);
   }
 
   return Art
