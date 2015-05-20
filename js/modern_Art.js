@@ -75,7 +75,7 @@ artApp = function() {
         shapeCount++;
       }
     }
-  }
+  };
 
   /*
   ** Change the color mix of the shapes
@@ -92,7 +92,7 @@ artApp = function() {
     }
 
     layer.draw();
-  }
+  };
 
   return {
     Art: Art

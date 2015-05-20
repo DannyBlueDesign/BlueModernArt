@@ -1,0 +1,19 @@
+{
+  "name": "ModernArt",
+  "version": "0.0.0",
+  "homepage": "https://github.com/deebloo/BlueModernArt",
+  "authors": [
+    "Danny Blue <dblue@deloitte.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kineticjs": "~5.1.0"
+  }
+}

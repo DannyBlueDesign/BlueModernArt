@@ -5,112 +5,15 @@
 
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/colorpicker.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
 
   <body>
-    <div id="controls">
-      <!-- <div class="control-set">
-        <h3>Include Shapes:</h3>
-
-        <p>
-          <label for="rectangle">Rectangle</label> 
-          <input id="rectangle" name="rectangle" type="checkbox" checked>
-        </p>
-
-        <p>
-          <label for="circle">Circle</label> 
-          <input id="circle" name="circle" type="checkbox" checked>
-        </p>
-      </div> -->
-
-      <div class="control-set">
-        <h3>Colors:</h3>
-
-        <div id="colorSelector0" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector1" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector2" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector3" class="color-select" style="margin-right:0;">
-          <div></div>
-        </div>
-
-        <br><br>
-
-        <div id="colorSelector4" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector5" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector6" class="color-select">
-          <div></div>
-        </div>
-
-        <div id="colorSelector7" class="color-select" style="margin-right:0;">
-          <div></div>
-        </div>
-      </div>
-
-      <div class="control-set">
-        <button id="shuffle" class="btn btn-success">Shuffle</button>
-      </div>
-
-      <div class="control-set">
-        <a href="#" download="#" id="download" class="btn btn-success">download art</a>
-      </div>
-    </div>
 
     <div id="container"></div>
 
-    <!-- Welcome Modal -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Welcome to Blue Modern Art</h4>
-          </div>
-
-          <div class="modal-body">
-            <p>This is a work in progress art project so please keep in mind there may be bugs.</p>
-
-            <p>With that in mind please click around and enjoy making some "Art".</p>
-
-            <p>Change the colors to change the color mix for the shapes. Click "SHUFFLE" to randomize the shapes positions. Click "DOWNLOAD" to download a png of your art.</p>
-
-            <p>(Current the save art button does not properly capture the changes you may make.)</p>
-
-            <p>You can view the project on <a href="https://github.com/DannyBlueDesign/BlueModernArt" taget="_blank">github</a>.</p>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal">Huzzah!</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="libs/jquery-1.11.1.min.js"></script>
-    <script src="libs/bootstrap.min.js"></script>
-    <script src="libs/colorpicker.js"></script>
-    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.2.min.js"></script>
-    <script src="js/modernArt.js"></script>
+    <script src="bower_components/kineticjs/kinetic.min.js"></script>
+    <script src="js/Art.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-      $('#welcomeModal').modal('show');
-    </script>
   </body>
 </html>
