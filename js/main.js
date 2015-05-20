@@ -1,8 +1,10 @@
 'use strict';
 (function() {
 
-  var height = window.screen.availHeight,
-      width  = window.screen.availWidth;
+  var height   = window.screen.availHeight,
+      width    = window.screen.availWidth,
+      canvasId = 'container',
+      canvas   = document.getElementById(canvasId);
 
   /* Create New Kinetic Stage */
   var stage = new Kinetic.Stage({
@@ -18,10 +20,14 @@
 
   art.create();
 
-  window.setInterval(function() {
+  //window.setInterval(function() {
+  //
+  //  art.shuffle();
+  //
+  //}, 3000);
 
+  canvas.addEventListener('click', function() {
     art.shuffle();
-
-  }, 3000);
+  });
 
 }());

@@ -1,4 +1,3 @@
-
 var Art = (function() {
 
   var POSITION_BASE = 140,
@@ -8,7 +7,9 @@ var Art = (function() {
   /**
    * @name Art
    *
-   * @param opts
+   * @param {Object} opts
+   * @param {Object} opts.stage
+   * @param {Array} opts.colors
    *
    * @constructor
    */
@@ -33,10 +34,9 @@ var Art = (function() {
   prototype.create = function create() {
     var shapeList = [];
 
-    /* Loop that draws shapes to the canvas*/
-    for(var i = 0; i <= 2700; i += _createRandom(POSITION_BASE)) {
+    for(var i = 0; i <= this.stage.attrs.width; i += _createRandom(POSITION_BASE)) {
 
-      for(var y = 0; y <= 900; y += _createRandom(POSITION_BASE)) {
+      for(var y = 0; y <= this.stage.attrs.height; y += _createRandom(POSITION_BASE)) {
 
         var object = new Kinetic.Rect({
           x: i,
@@ -69,27 +69,21 @@ var Art = (function() {
    * Shuffle all of the shapes to a new position on screen
    */
   prototype.shuffle = function shuffle() {
-    var shapeCount = 0,
-        shapeList  = this.shapeList;
+    var shapeList = this.shapeList, tween;
 
-    for(var i = 0; i <= 2700; i += _createRandom(POSITION_BASE)) {
-      for(var y = 0; y <= 900; y += _createRandom(POSITION_BASE)) {
+    for(var i = 0, len = shapeList.length; i < len; i++) {
+      tween = new Kinetic.Tween({
+        node: shapeList[i],
+        x: _createRandom(this.stage.attrs.width),
+        y: _createRandom(this.stage.attrs.height),
+        width: _createRandom(SIZE_BASE),
+        height: _createRandom(SIZE_BASE),
+        opacity: Math.random(),
+        easing: Kinetic.Easings.StrongEaseOut,
+        duration: 2
+      });
 
-        var tween = new Kinetic.Tween({
-          node: shapeList[shapeCount],
-          x: i,
-          y: y,
-          width: _createRandom(SIZE_BASE),
-          height: _createRandom(SIZE_BASE),
-          opacity: Math.random(),
-          easing: Kinetic.Easings.StrongEaseOut,
-          duration: 2
-        });
-
-        tween.play();
-        
-        shapeCount++;
-      }
+      tween.play();
     }
   };
 
