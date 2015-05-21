@@ -21,11 +21,19 @@
 
   art.create();
 
+  art.shuffle(0, 0, 5, 5);
+
   art.shuffle();
 
-  canvas.addEventListener('click', function(e) {
+  canvas.addEventListener('mousedown', function(e) {
 
-    art.shuffle(e.x, e.y);
+    art.shuffle(e.x, e.y, 5, 5);
+
+  });
+
+  canvas.addEventListener('mouseup', function(e) {
+
+    art.shuffle();
 
   });
 

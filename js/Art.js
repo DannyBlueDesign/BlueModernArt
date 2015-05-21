@@ -75,42 +75,23 @@ var Art = (function() {
    * @description
    * Shuffle all of the shapes to a new position on screen
    */
-  prototype.shuffle = function shuffle(x, y) {
+  prototype.shuffle = function shuffle(x, y, height, width, duration) {
     var shapeList = this.shapeList, tween;
 
     for(var i = 0, len = shapeList.length; i < len; i++) {
 
       tween = new Kinetic.Tween({
         node: shapeList[i],
-        x: typeof x !== 'undefined' ? x : 0,
-        y: typeof y !== 'undefined' ? y : 0,
-        width: _createRandom(SIZE_BASE),
-        height: _createRandom(SIZE_BASE),
+        x: typeof x !== 'undefined' ? x : _createRandom(this.stage.attrs.width),
+        y: typeof y !== 'undefined' ? y : _createRandom(this.stage.attrs.height),
+        width: height || _createRandom(SIZE_BASE),
+        height: width || _createRandom(SIZE_BASE),
         easing: Kinetic.Easings.StrongEaseOut,
-        duration: 0.5
+        duration: duration || 0.5
       });
 
       tween.play();
-
     }
-
-    setTimeout(function() {
-      for(var i = 0, len = shapeList.length; i < len; i++) {
-
-        tween = new Kinetic.Tween({
-          node: shapeList[i],
-          x: _createRandom(this.stage.attrs.width),
-          y: _createRandom(this.stage.attrs.height),
-          width: _createRandom(SIZE_BASE),
-          height: _createRandom(SIZE_BASE),
-          easing: Kinetic.Easings.StrongEaseOut,
-          duration: 1
-        });
-
-        tween.play();
-
-      }
-    }.bind(this), 1000);
   };
 
   /**
