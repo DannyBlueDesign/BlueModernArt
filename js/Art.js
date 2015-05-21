@@ -87,7 +87,7 @@ var Art = (function() {
         width: _createRandom(SIZE_BASE),
         height: _createRandom(SIZE_BASE),
         easing: Kinetic.Easings.StrongEaseOut,
-        duration: 1
+        duration: 0.5
       });
 
       tween.play();
@@ -104,7 +104,7 @@ var Art = (function() {
           width: _createRandom(SIZE_BASE),
           height: _createRandom(SIZE_BASE),
           easing: Kinetic.Easings.StrongEaseOut,
-          duration: 4
+          duration: 1
         });
 
         tween.play();
