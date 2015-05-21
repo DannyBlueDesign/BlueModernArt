@@ -2,7 +2,7 @@
 
 var Art = (function() {
 
-  var POSITION_BASE = 100,
+  var POSITION_BASE = 150,
       SIZE_BASE     = 75,
       prototype     = Art.prototype;
 
@@ -75,24 +75,42 @@ var Art = (function() {
    * @description
    * Shuffle all of the shapes to a new position on screen
    */
-  prototype.shuffle = function shuffle() {
+  prototype.shuffle = function shuffle(x, y) {
     var shapeList = this.shapeList, tween;
 
     for(var i = 0, len = shapeList.length; i < len; i++) {
 
       tween = new Kinetic.Tween({
         node: shapeList[i],
-        x: _createRandom(this.stage.attrs.width),
-        y: _createRandom(this.stage.attrs.height),
+        x: typeof x !== 'undefined' ? x : 0,
+        y: typeof y !== 'undefined' ? y : 0,
         width: _createRandom(SIZE_BASE),
         height: _createRandom(SIZE_BASE),
         easing: Kinetic.Easings.StrongEaseOut,
-        duration: 4
+        duration: 1
       });
 
       tween.play();
 
     }
+
+    setTimeout(function() {
+      for(var i = 0, len = shapeList.length; i < len; i++) {
+
+        tween = new Kinetic.Tween({
+          node: shapeList[i],
+          x: _createRandom(this.stage.attrs.width),
+          y: _createRandom(this.stage.attrs.height),
+          width: _createRandom(SIZE_BASE),
+          height: _createRandom(SIZE_BASE),
+          easing: Kinetic.Easings.StrongEaseOut,
+          duration: 4
+        });
+
+        tween.play();
+
+      }
+    }.bind(this), 1000);
   };
 
   /**

@@ -23,15 +23,9 @@
 
   art.shuffle();
 
-  window.setInterval(function() {
+  canvas.addEventListener('click', function(e) {
 
-    art.shuffle();
-
-  }, 5000);
-
-  canvas.addEventListener('click', function() {
-
-    art.shuffle();
+    art.shuffle(e.x, e.y);
 
   });
 
