@@ -25,7 +25,7 @@
 
   window.setInterval(function() {
 
-    //art.shuffle();
+    art.shuffle();
 
   }, 5000);
 
