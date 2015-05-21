@@ -14,10 +14,10 @@
     height: height
   });
 
-  var colors = ['#006699', '#a60000', '#000000', '#613400', '#035900', '#e04b00', '#858585', '#528ef0'];
+  var colors = ['#8DA1B9', '#95ADB6', '#CBB3BF', '#DBC7BE', '#EF959C'];
 
   // create new art object
-  var art = new Art(stage, colors);
+  var art = new Art(stage, colors, 0, 0);
 
   art.create();
 
@@ -25,9 +25,9 @@
 
   window.setInterval(function() {
 
-    art.shuffle();
+    //art.shuffle();
 
-  }, 3000);
+  }, 5000);
 
   canvas.addEventListener('click', function() {
 

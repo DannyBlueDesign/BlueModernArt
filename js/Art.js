@@ -2,19 +2,26 @@
 
 var Art = (function() {
 
-  var POSITION_BASE = 135,
+  var POSITION_BASE = 100,
       SIZE_BASE     = 75,
       prototype     = Art.prototype;
+
+  var X, Y;
 
   /**
    * @name Art
    *
    * @param {Object} stage
    * @param {Array} colors
+   * @param {Number} originX
+   * @param {Number} originY
    *
    * @constructor
    */
-  function Art(stage, colors) {
+  function Art(stage, colors, originX, originY) {
+    X = originX;
+    Y = originY;
+
     this.stage = stage;
 
     this.colors = colors;
@@ -33,19 +40,18 @@ var Art = (function() {
    * Create Art!!!
    */
   prototype.create = function create() {
-    var shapeList = [];
+    var shapeList = [], object;
 
     for(var i = 0; i <= this.stage.attrs.width; i += _createRandom(POSITION_BASE)) {
 
       for(var y = 0; y <= this.stage.attrs.height; y += _createRandom(POSITION_BASE)) {
 
-        var object = new Kinetic.Rect({
-          x: i,
-          y: y,
+        object = new Kinetic.Rect({
+          x: typeof X !== 'undefined' ? X : i,
+          y: typeof Y !== 'undefined' ? Y : y,
           width: _createRandom(SIZE_BASE),
           height: _createRandom(SIZE_BASE),
-          fill: this.colors[Math.floor(Math.random() * this.colors.length)],
-          opacity: Math.random()
+          fill: this.colors[Math.floor(Math.random() * this.colors.length)]
         });
 
         shapeList.push(object);
@@ -59,8 +65,6 @@ var Art = (function() {
     this.stage.add(this.layer1); // add the layer to the stage
 
     this.shapeList = shapeList;
-
-    console.log(this.shapeList.length);
   };
 
   /**
@@ -75,18 +79,19 @@ var Art = (function() {
     var shapeList = this.shapeList, tween;
 
     for(var i = 0, len = shapeList.length; i < len; i++) {
+
       tween = new Kinetic.Tween({
         node: shapeList[i],
         x: _createRandom(this.stage.attrs.width),
         y: _createRandom(this.stage.attrs.height),
         width: _createRandom(SIZE_BASE),
         height: _createRandom(SIZE_BASE),
-        opacity: Math.random(),
         easing: Kinetic.Easings.StrongEaseOut,
-        duration: 2
+        duration: 4
       });
 
       tween.play();
+
     }
   };
 
