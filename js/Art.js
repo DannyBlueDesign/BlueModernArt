@@ -9,16 +9,15 @@ var Art = (function() {
   /**
    * @name Art
    *
-   * @param {Object} opts
-   * @param {Object} opts.stage
-   * @param {Array} opts.colors
+   * @param {Object} stage
+   * @param {Array} colors
    *
    * @constructor
    */
-  function Art(opts) {
-    this.stage = opts.stage;
+  function Art(stage, colors) {
+    this.stage = stage;
 
-    this.colors = opts.colors;
+    this.colors = colors;
 
     this.shapeList = [];
 
