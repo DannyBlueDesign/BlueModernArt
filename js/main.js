@@ -31,7 +31,7 @@
 
   });
 
-  canvas.addEventListener('mouseup', function(e) {
+  canvas.addEventListener('mouseup', function() {
 
     art.shuffle();
 
