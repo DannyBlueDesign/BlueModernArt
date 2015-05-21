@@ -2,8 +2,8 @@
 
 (function() {
 
-  var height   = window.screen.availHeight,
-      width    = window.screen.availWidth,
+  var height   = window.innerHeight,
+      width    = window.innerWidth,
       canvasId = 'container',
       canvas   = document.getElementById(canvasId);
 
@@ -17,7 +17,7 @@
   var colors = ['#8DA1B9', '#95ADB6', '#CBB3BF', '#DBC7BE', '#EF959C'];
 
   // create new art object
-  var art = new Art(stage, colors, 0, 0);
+  var art = new Art(stage, colors, 50, 200);
 
   art.create();
 
